@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use("/admin", adminRouter);
-app.use("/user", userRouter);
+// app.use("/user", userRouter);
 
 app.listen(port, () => {
     console.log("server is running..");
