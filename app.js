@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
+app.use(cors());
 mongoose.connect("mongodb+srv://kavitaahirwar:Kavita12345@cluster0.0rkdj.mongodb.net/angulardb?retryWrites=true&w=majority")
     .then(result => {
         console.log("connection successfully..");
