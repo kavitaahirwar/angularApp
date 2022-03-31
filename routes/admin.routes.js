@@ -10,13 +10,13 @@ router.post("/signin", (request, response) => {
         .then(result => {
             console.log(result);
             if (result)
-                return response.status(200).json({ message: "Login successfully", result });
+                return response.status(200).json({ result: result });
             else
                 return response.status(404).json({ message: "invalid admin.." });
         })
         .catch(err => {
             console.log(err);
-            return response.status(500).json({ error: "internal server error" });
+            return response.status(500).json({ error: err });
         });
 })
 
@@ -29,11 +29,11 @@ router.post("/signup", (request, response) => {
         })
         .then(result => {
             console.log(result);
-            return response.status(201).json(result);
+            return response.status(201).json({ result: result });
         })
         .catch(err => {
             console.log(err);
-            return response.status(404).json({ error: "internal server error" });
+            return response.status(404).json({ error: err });
         });
 });
 
